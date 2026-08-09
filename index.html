@@ -1,1 +1,80 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BlowWater</title>
+<meta name="description" content="BlowWater — send us your feedback and suggestions.">
+<style>
+  /* Same palette and font stack as privacy.html, so the two pages read as one
+     site rather than two. */
+  :root {
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --rule: #e3e3e6;
+    --accent: #0a63c9;
+    --on-accent: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #131315;
+      --fg: #ececee;
+      --muted: #9d9da3;
+      --rule: #2c2c30;
+      --accent: #6ba8f5;
+      --on-accent: #131315;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: 4rem 1.25rem 3rem;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 26rem; margin: 0 auto; text-align: center; }
+  h1 { font-size: 2.25rem; line-height: 1.2; margin: 0 0 2rem; letter-spacing: -.02em; }
+  a { color: var(--accent); }
+  .btn {
+    display: block;
+    background: var(--accent);
+    color: var(--on-accent);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    /* Padding rather than a fixed height, so the target grows with the text at
+       larger accessibility sizes instead of clipping it. */
+    padding: .85rem 1.5rem;
+    min-height: 44px;
+  }
+  .btn:hover { opacity: .9; }
+  .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  /* The button does nothing at all for a visitor with no mail client, and it
+     fails silently. This is the copyable way out of that. */
+  .fallback { color: var(--muted); font-size: .9rem; margin: 1rem 0 0; }
+  footer {
+    margin-top: 4rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    color: var(--muted); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>BlowWater</h1>
+
+  <a class="btn" href="mailto:hello@blowwater.app?subject=BlowWater%20feedback">Send feedback</a>
+
+  <p class="fallback">Or write to
+  <a href="mailto:hello@blowwater.app">hello@blowwater.app</a></p>
+
+  <footer><a href="/privacy.html">Privacy Policy</a></footer>
+
+</main>
+</body>
+</html>
